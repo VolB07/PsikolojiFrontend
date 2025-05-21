@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, Inject, Injectable, OnInit, PLATFORM_ID } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -11,7 +11,9 @@ interface Service {
   title: string;
   description: string;
 }
-
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
