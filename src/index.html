@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>GunesPsikoloji</title>
+  <title>Güneş Psikoloji</title>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const originalTitle = "Güneş Psikoloji";
+      const awayTitle = "Randevu Almadın!";
+
+      // Sayfa odağını kaybettiğinde (başka bir sekmeye geçildiğinde)
+      window.addEventListener("blur", () => {
+        document.title = awayTitle;
+      });
+
+      // Sayfa odağına dönüldüğünde (bu sekmeye geri gelindiğinde)
+      window.addEventListener("focus", () => {
+        document.title = originalTitle;
+      });
+    });
+  </script>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-png" href="assets/images/logoico.png">
 </head>
 <body>
   <app-root></app-root>

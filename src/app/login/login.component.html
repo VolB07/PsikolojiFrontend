@@ -1,0 +1,27 @@
+<div class="login-container">
+  <h2>Admin Giriş</h2>
+  <form (ngSubmit)="login()">
+      <div class="input-group">
+          <input
+              type="text"
+              id="username"
+              [(ngModel)]="username"
+              name="username"
+              placeholder="Kullanıcı Adı"
+              required
+          />
+      </div>
+      <div class="input-group">
+          <input
+              type="password"
+              id="password"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="Şifre"
+              required
+          />
+      </div>
+      <button type="submit">Giriş Yap</button>
+      <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>
+</div>

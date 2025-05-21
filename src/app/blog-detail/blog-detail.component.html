@@ -1,0 +1,86 @@
+
+<div class="main-container">
+    <header class="header">
+        <nav class="nav-container">
+          <div class="nav-content">
+            <div class="logo">
+              <img src="assets/images/logo.png" alt="Güneş Psikoloji Logo">
+            </div>
+            <div class="nav-links">
+              <a href="#home" class="nav-link">Ana Sayfa</a>
+              <a href="#about" class="nav-link">Hakkımda</a>
+              <a href="#services" class="nav-link">Hizmetler</a>
+              <a href="#contact" class="nav-link">İletişim</a>
+              <a href="#gallery" class="nav-link">Galeri</a>
+              <a href="blog" class="nav-link">Bloglar</a>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <div class="blog-detail-container" *ngIf="blog">
+        <h1>{{ blog.title }}</h1>
+        <img *ngIf="blog.image_url" [src]="blog.image_url" alt="{{ blog.title }}" class="blog-image">
+        <p class="summary">{{ blog.summary }}</p>
+        <div class="content">{{ blog.content }}</div>
+    </div>
+      <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Footer Logo -->
+        <div class="footer-logo">
+          <h3>Güneş Psikoloji</h3>
+          <p>Her adımda yanınızdayız.</p>
+        </div>
+
+        <!-- Hızlı Bağlantılar -->
+        <div class="footer-links">
+          <h4>Hızlı Bağlantılar</h4>
+          <ul>
+            <li><a href="#home">Ana Sayfa</a></li>
+            <li><a href="#about">Hakkımda</a></li>
+            <li><a href="#services">Hizmetler</a></li>
+            <li><a href="#contact">İletişim</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="blog">Bloglar</a></li>
+          </ul>
+        </div>
+
+        <!-- Sosyal Medya -->
+        <div class="footer-social">
+          <h4>Tıkla Takip Et</h4>
+          <div class="social-icons">
+            <a href="https://www.instagram.com/gunespsikolojiburdur/" target="_blank">
+              <fa-icon [icon]="faInstagram"></fa-icon> Instagram
+            </a>
+          </div>
+        </div>
+
+        <!-- İletişim Bilgileri -->
+        <div class="footer-contact">
+          <h4>İletişim</h4>
+          <ul>
+            <li><strong>Adres:</strong> Konak Mahallesi Kalekapı Caddesi 14/3 Burdur/Merkez</li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/905066300519"> +90 506 630 05 19</a></li>
+            <li><strong>E-posta:</strong> <a href="mailto:gunespsikoloji@outlook.com">
+                gunespsikoloji&#64;outlook.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 Güneş Psikoloji. Tüm hakları saklıdır.</p>
+        <p>
+          Bu site Volkan Bülbül tarafından Angular, SQL ve ASP.NET Core kullanılarak kodlanmıştır.
+          İletişim için bağlantıya tıklayın
+          <a href="https://www.linkedin.com/in/volkan-b%C3%BClb%C3%BCl-57a2a8333/" target="_blank">
+            <fa-icon [icon]="faLinkedin"></fa-icon> LinkedIn
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+  

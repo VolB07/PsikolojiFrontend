@@ -1,0 +1,732 @@
+/* Navbar düzeltmeleri */
+.header {
+  background: var(--bg-dark);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  background-color: #ff6600;
+  max-width: 100%;
+  height: 80px;
+  padding: 0 2rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  /* Yatayda ortalar */
+  align-items: center;
+  /* Dikeyde ortalar */
+  backdrop-filter: blur(5px);
+  /* Arka planı bulanık yapar */
+  position: fixed;
+  /* Sayfanın üst kısmına yapıştırır */
+  top: 0;
+  /* Üst kısmı sıfırlar */
+  left: 0;
+  /* Sol kısmı sıfırlar */
+  width: 100%;
+  /* Tam genişlik */
+  z-index: 1000;
+  /* Üstte görünmesi için */
+  transition: opacity 1s ease-in-out;
+  /* Opaklık geçişi */
+  opacity: 1;
+  /* Başlangıçta görünür */
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  /* Nav içinde tam genişlik kullanır */
+}
+
+
+.logo img {
+  height: 200px;
+  /* Logo boyutunu ayarlayın */
+  width: auto;
+  /* Oranlarını koruyarak genişlik ayarları */
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+}
+
+/* Hamburger Menü */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Sayfa arka plan ve renk düzeltmeleri */
+body {
+  background-color: var(--bg-light);
+  /* Beyaz yerine daha yumuşak gri tonlarında arka plan */
+}
+
+.hero-section {
+  position: relative;
+  height: 60vh;
+  /* Banner yüksekliğini ayarlayın */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  text-align: center;
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('C:/GunesPsikoloji/src/assets/images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  margin-top: 80px;
+  /* Navbar'ın yüksekliğine göre üst boşluk */
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* Karartma efekti */
+  backdrop-filter: blur(4px);
+  /* Bulanıklaştırma efekti */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.primary-button {
+  background: #ff7f50;
+  /* Daha çekici bir renk */
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.primary-button:hover {
+  background: #ff6347;
+  /* Hover efekti */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form elemanları düzeltmeleri */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background: white;
+  color: var(--text-dark);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(44, 83, 100, 0.2);
+  outline: none;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+/* Buton stilleri */
+.submit-button,
+.primary-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: auto;
+  display: inline-block;
+}
+
+.submit-button:hover,
+.primary-button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Section arkaplan renkleri */
+.about-section {
+  background: #f4f4f4;
+  /* Açık gri */
+  padding: 6rem 0;
+}
+
+/* Hakkımda Kısmı */
+.about-grid {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+
+}
+
+/* Hamburger Menüyü Başlangıçta Gizle */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Küçük Ekranlarda Görünür Hale Getir */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 1rem;
+    display: block;
+    color: white;
+  }
+}
+
+
+.about-image img {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('C:/GunesPsikoloji/src/assets/images/busennur.jpg');
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.credentials p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.specialties li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Galeri Kısmı */
+.gallery-section {
+  background: #f4f4f4;
+  padding: 6rem 0;
+  text-align: center;
+}
+
+.gallery-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.gallery-section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 1rem auto;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Footer */
+.footer {
+  background: #f9f9f9;
+  padding: 4rem 2rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-contact li {
+  margin-bottom: 8px;
+}
+
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links a {
+  color: black;
+  text-decoration: none;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary-color);
+}
+
+.social-icons a {
+  color: black;
+  font-size: 1rem;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: var(--secondary-color);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.services-section {
+  background: #f9f9f9;
+  /* Daha açık gri tonunda */
+  padding: 6rem 0;
+}
+
+.contact-section {
+  background: #f4f4f4;
+  /* Açık gri */
+  padding: 6rem 0;
+}
+
+/* Service kartları */
+.service-card {
+  background: #ffffff;
+  /* Beyaz yerine yumuşak bir gri tonunda */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  /* Daha belirgin gölge efekti */
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Form container */
+.contact-form {
+  background: #ffffff;
+  /* Beyaz yerine gri tonunda */
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  color: #000000;
+  /* Siyah renk */
+}
+
+/* Error durumları için form stilleri */
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #dc3545;
+  background-color: #fff8f8;
+}
+
+/* Responsive düzenlemeler */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.5rem;
+  }
+
+  .hero-section {
+    padding: 6rem 0 4rem;
+  }
+}
+
+/* Section başlıkları için stil */
+section h2 {
+  color: var(--text-dark);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 1rem auto;
+}
+
+/* Genel stil ayarları */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0 15px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #66cc99;
+  color: white;
+  text-align: center;
+  padding: 80px 0;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.primary-button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+
+.primary-button:hover {
+  background-color: #e65c00;
+}
+
+/* Hakkımda ve diğer bölümler */
+.about-section {
+  padding: 50px 0;
+}
+
+.about-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 300px;
+  border-radius: 10px;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: justify;
+}
+
+.about-description {
+  line-height: 1.6;
+}
+
+.credentials p {
+  margin: 5px 0;
+}
+
+.specialties ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.specialties li {
+  margin: 10px 0;
+}
+
+.specialties i {
+  margin-right: 10px;
+}
+
+.services-section {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-section {
+  background-color: #f9f9f9;
+
+  padding: 50px 0;
+  text-align: center;
+}
+
+.contact-section h2 {
+  margin-bottom: 20px;
+}
+
+.contact-section button {
+  color: #000000;
+}
+
+/* Mobil uyumlu hale getirme */
+@media (max-width: 768px) {
+
+  /* Header menüsü */
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .nav-link {
+    padding: 10px 0;
+  }
+
+  /* Hero */
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .primary-button {
+    font-size: 1rem;
+  }
+
+  /* Hakkımda bölümündeki metin ve görsel */
+  .about-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-image img {
+    max-width: 100%;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  /* Hizmetler grid düzeni */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* İletişim */
+  .contact-section {
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Hero */
+  .hero-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+
+  .primary-button {
+    font-size: 0.9rem;
+  }
+
+  /* Hakkımda */
+  .about-image img {
+    max-width: 100%;
+  }
+
+  /* Hizmetler grid düzeni */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

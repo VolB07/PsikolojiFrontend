@@ -1,0 +1,39 @@
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f2f2f2;
+  }
+  
+  .error-code {
+    font-size: 120px;
+    color: #ff6600;
+    margin: 0;
+  }
+  
+  .message {
+    font-size: 50px;
+    font-weight: bold;
+    color: #666;
+  }
+  
+  .back-home {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .back-home:hover {
+    background: #ff6600;
+    /* Hover efekti */
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
