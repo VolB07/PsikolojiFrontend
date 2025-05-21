@@ -99,7 +99,7 @@ body {
   justify-content: center;
   color: var(--text-light);
   text-align: center;
-  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('C:/GunesPsikoloji/src/assets/images/banner.jpg');
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('assets/images/banner.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
