@@ -263,7 +263,7 @@ body {
 
 
 .about-image img {
-  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('C:/GunesPsikoloji/src/assets/images/busennur.jpg');
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('src/assets/images/busennur.jpg');
   width: 100%;
   max-width: 400px;
   border-radius: 16px;
