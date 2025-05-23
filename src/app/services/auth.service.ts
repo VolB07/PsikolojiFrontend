@@ -1,14 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { isPlatformBrowser } from '@angular/common';
 import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
-    private apiUrl = 'https://psikolojibackend.onrender.com/api/Auth'; // API'nizin adresini buraya koyun
+    private apiUrl = 'https://psikolojibackend.onrender.com/api/Auth';
 
-    constructor(private http: HttpClient) { }
+    constructor(
+        private http: HttpClient,
+        @Inject(PLATFORM_ID) private platformId: Object // platform kontrolü için ekledik
+    ) { }
 
     // Login işlemi
     login(username: string, password: string): Observable<any> {
@@ -16,9 +20,9 @@ export class AuthService {
         return this.http.post<any>(`${this.apiUrl}/login`, body);
     }
 
-    // Token'ı al ve her istekte başlığa ekle
+    // Header ayarı
     getHeaders() {
-        const token = localStorage.getItem('token');
+        const token = this.getToken();
         return {
             headers: new HttpHeaders({
                 Authorization: `Bearer ${token}`,
@@ -27,50 +31,48 @@ export class AuthService {
     }
 
     getToken(): string | null {
-        return localStorage.getItem('token'); // Token'ı localStorage'dan al
+        if (isPlatformBrowser(this.platformId)) {
+            return localStorage.getItem('token');
+        }
+        return null;
     }
 
-
-    // Kullanıcı giriş yaptıysa, token'ı localStorage'a kaydedin
     setToken(token: string) {
-        localStorage.setItem('token', token);
+        if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem('token', token);
+        }
     }
 
-    // Token'ı kaldır
     logout() {
-        localStorage.removeItem('token');
+        if (isPlatformBrowser(this.platformId)) {
+            localStorage.removeItem('token');
+        }
     }
 
-    // Token kontrolü
     isLoggedIn(): boolean {
-        return !!localStorage.getItem('token');
+        return isPlatformBrowser(this.platformId) && !!localStorage.getItem('token');
     }
 
-    // Kullanıcı rolünü al
     getRole(): string | null {
-        const token = localStorage.getItem('token');
-        if (token) {
-            try {
-                const payload = JSON.parse(atob(token.split('.')[1])); // Base64 decoding
-                console.log('Decoded Payload:', payload); 
-                return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role']; 
-            } catch (error) {
-                console.error('JWT decoding hatası:', error);
-                return null;
+        if (isPlatformBrowser(this.platformId)) {
+            const token = localStorage.getItem('token');
+            if (token) {
+                try {
+                    const payload = JSON.parse(atob(token.split('.')[1]));
+                    console.log('Decoded Payload:', payload);
+                    return payload['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+                } catch (error) {
+                    console.error('JWT decoding hatası:', error);
+                    return null;
+                }
             }
         }
         return null;
     }
 
-
-
-
-
-    // Kullanıcı rolünü localStorage'a kaydedin
     setRole(role: string) {
-        localStorage.setItem('role', role); // Rol bilgisini localStorage'a kaydedin
+        if (isPlatformBrowser(this.platformId)) {
+            localStorage.setItem('role', role);
+        }
     }
 }
-
-
-

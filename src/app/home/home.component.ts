@@ -11,9 +11,7 @@ interface Service {
   title: string;
   description: string;
 }
-@Injectable({
-  providedIn: 'root'
-})
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

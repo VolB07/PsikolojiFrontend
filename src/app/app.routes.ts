@@ -10,7 +10,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { AdminServicesComponent } from './admin/service.managment';
 import { AdminGalleryComponent } from './admin/gallery.managment';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './Guards/auth.guard';
+import { authGuard } from './Guards/auth.guard';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -21,32 +21,32 @@ export const routes: Routes = [
     {
       path: 'admin',
       component: AdminDashboardComponent,
-      canActivate: [AuthGuard], // AuthGuard ile erişimi kontrol et
+      canActivate: [authGuard], // AuthGuard ile erişimi kontrol et
     },
     {
       path: 'admin/about',
       component: AdminAboutComponent,
-      canActivate: [AuthGuard], // Admin paneline giriş kontrolü
+      canActivate: [authGuard], // Admin paneline giriş kontrolü
     },
     {
       path: 'admin/blogs',
       component: BlogManagementComponent,
-      canActivate: [AuthGuard], // Admin paneline giriş kontrolü
+      canActivate: [authGuard], // Admin paneline giriş kontrolü
     },
     {
       path: 'admin/contact',
       component: AdminContactComponent,
-      canActivate: [AuthGuard], // Admin paneline giriş kontrolü
+      canActivate: [authGuard], // Admin paneline giriş kontrolü
     },
     {
       path: 'admin/services',
       component: AdminServicesComponent,
-      canActivate: [AuthGuard], // Admin paneline giriş kontrolü
+      canActivate: [authGuard], // Admin paneline giriş kontrolü
     },
     {
       path: 'admin/gallery',
       component: AdminGalleryComponent,
-      canActivate: [AuthGuard], // Admin paneline giriş kontrolü
+      canActivate: [authGuard], // Admin paneline giriş kontrolü
     },
     { path: '**', component: NotFoundComponent } // 📌 Geçersiz route'larda ana sayfaya yönlendirme
 ];

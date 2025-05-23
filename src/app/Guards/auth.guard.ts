@@ -1,29 +1,17 @@
-import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { inject, Injectable } from '@angular/core';
+import { CanActivateFn, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root',
-})
-export class AuthGuard implements CanActivate {
-  constructor(private authService: AuthService, private router: Router) {}
+export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+  const authService = inject(AuthService);
+  const router = inject(Router);
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    
-    const role = this.authService.getRole(); // Kullanıcı rolünü al
-    console.log('Kullanıcı rolü:', role);  // Role bilgisini kontrol et
-    
-    if (!role || role !== 'admin') {
-      this.router.navigate(['/login']); // Admin olmayan kullanıcıyı login sayfasına yönlendir
-      return false;
-    }
-    
-    return true; // Adminse erişime izin ver
+  const role = authService.getRole();
+  console.log('Kullanıcı rolü:', role);
+
+  if (!role || role !== 'admin') {
+    router.navigate(['/login']);
+    return false;
   }
-  
-  
-  
-}
+  return true;
+};

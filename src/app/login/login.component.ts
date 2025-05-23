@@ -3,14 +3,13 @@ import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-@Injectable({
-  providedIn: 'root'
-})
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   standalone:true,
-  imports: [ReactiveFormsModule, CommonModule,FormsModule],
+  imports: [ReactiveFormsModule, CommonModule,FormsModule,HttpClientModule],
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
